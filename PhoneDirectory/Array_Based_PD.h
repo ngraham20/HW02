@@ -53,25 +53,39 @@ public:
 	void save();
 
 private:
+	//---------------------- Completed by Nathaniel Graham ----------------------------
 	class Directory_Entry
 	{
 	public:
-		Directory_Entry() {} // Default no-argument constructor 
-		Directory_Entry(std::string the_name, std::string the_number) {
-			// constructor not implemented yet
+
+		Directory_Entry() 
+		{
+			this->name = "";
+			this->number = "";
+		} // Default no-argument constructor 
+		Directory_Entry(std::string the_name, std::string the_number) 
+		{
+			// initializes name and number to those specified
+			name = the_name;
+			this->number = the_number;
 		}
-		std::string get_name() const {
-			return ""; // method not implemented yet
-		}
-		std::string get_number() const {
-			return ""; // method not implemented yet
-		}
-		void set_number(const std::string& new_number) {
-			// method not implemented yet
+		// retrieves name
+		std::string get_name() const { return name; }
+
+		// retrieves number
+		std::string get_number() const { return number; }
+
+		// sets the new number
+		void set_number(const std::string& new_number) 
+		{
+			this->number = new_number;
 		}
 	private:
+		// declares name and number
+		std::string name;
+		std::string number;
 	};
-
+	// ---------------------------------------------------------------------------------
 	// Private Functions
 	/** Searches the array of directory entries for the name.
 		@param name The name to be found
